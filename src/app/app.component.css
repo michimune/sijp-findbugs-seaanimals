@@ -1,0 +1,28 @@
+
+body {
+    background-color: lightskyblue;
+    font-size: 300%;
+}
+
+.main {
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 300%;
+}
+
+header {
+    background: blue;
+    color: white;
+    font-size: 150%;
+}
+
+footer {
+    background: black;
+    color: white;
+}
+
+input[type="checkbox"] {
+    transform: scale(2, 2);
+    vertical-align: middle;
+}
