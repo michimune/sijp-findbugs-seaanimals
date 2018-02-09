@@ -23,6 +23,13 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Deploying to Azure App Service
+
+You will need to change the virtual application setting for the root `/` directory, because the build artifact will be stored in the `dist/` directory mentioned above.
+To do this, open the Azure portal, nagivate to your web app. Open the "Application Settings" menu, and scroll down to the "Virtual applications and directories" section.
+Change the physical path for the `/` virtual directory from `site\wwwroot` to `site\wwwroot\dist`.
+Press Save to apply the change.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
