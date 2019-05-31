@@ -20,7 +20,7 @@ export class AppComponent {
     this.seaAnimals.push(new SeaAnimal({
       order: 2,
       picture: 'nemo2.jpg',
-      name: 'Angel fish',
+      name: 'Goldfish',
       mammal: false
     }));
     this.seaAnimals.push(new SeaAnimal({
@@ -30,7 +30,7 @@ export class AppComponent {
       mammal: true
     }));
     this.seaAnimals.push(new SeaAnimal({
-      order: 4,
+      order: 100,
       picture: 'whale.jpg',
       name: 'Whole',
       mammal: false
