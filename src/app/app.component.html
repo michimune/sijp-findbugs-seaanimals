@@ -1,6 +1,11 @@
 <header>
   <h2>{{ title }}</h2>
 </header>
+<b>Please file a bug from</b>
+<a href="http://bit.ly/breports">
+  <img src="./assets/bug.jpg" height="42" width="42">
+</a>
+<br />
 <section class="main" *ngIf="seaAnimals.length > 0">
   <table>
     <tr>
@@ -13,7 +18,7 @@
       <td class="center">{{animal.order}}</td>
       <td>{{animal.name}}</td>
       <td><img src="./assets/{{animal.picture}}" style="width: 256px;"/></td>
-      <td><input class="toggle" type="checkbox" [checked]="animal.mammal"></td>
+      <td>{{animal.mammal ? 'Y' : 'N'}}</td>
     </tr>
   </table>
 </section>
