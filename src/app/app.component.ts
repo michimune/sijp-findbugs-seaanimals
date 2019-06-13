@@ -11,57 +11,71 @@ import { SeaAnimal } from './sea-animal';
 })
 export class AppComponent implements OnInit {
   title = 'Sea animals in the order of the size';
-  version = '1.0';
-  seaAnimals: SeaAnimal[] = [];
+  versions: number[] = [1, 2];
+  currentVersion: number = this.versions[0];
+  seaAnimals1: SeaAnimal[] = [];
+  seaAnimals2: SeaAnimal[] = [];
   sub: Subscription;
 
-  constructor(private route: ActivatedRoute, router: Router) {
-    this.sub = this.route.params.subscribe((params: ParamMap) => {
-      console.log('subscribe');
-      console.log('subscribe: keys = ' + params.keys);
-      this.version = params['ver']
-    });
-    // TODO: Find a proper way to get a query string
-    router.events.subscribe((ev: RouterEvent) => {
-      if (ev instanceof ActivationEnd) {
-        console.log('params.ver = ' + ev.snapshot.params.ver);
-        this.version = ev.snapshot.params.ver;
-      }
-    });
-    this.seaAnimals.push(new SeaAnimal({
+  constructor() {
+    this.seaAnimals1.push(new SeaAnimal({
       order: 1,
       picture: 'salmon.jpg',
       name: 'Salmon',
       mammal: false
     }));
-    this.seaAnimals.push(new SeaAnimal({
+    this.seaAnimals1.push(new SeaAnimal({
       order: 2,
       picture: 'nemo2.jpg',
       name: 'Goldfish',
       mammal: false
     }));
-    this.seaAnimals.push(new SeaAnimal({
+    this.seaAnimals1.push(new SeaAnimal({
       order: 3,
       picture: 'gorilla.jpg',
       name: 'Shark',
       mammal: true
     }));
-    this.seaAnimals.push(new SeaAnimal({
-      order: 100,
+    this.seaAnimals1.push(new SeaAnimal({
+      order: 4,
       picture: 'whale.jpg',
       name: 'Whole',
       mammal: false
+    }));
+
+    this.seaAnimals2.push(new SeaAnimal({
+      order: 1,
+      picture: 'nemo2.jpg',
+      name: 'Goldfish',
+      mammal: false
+    }));
+    this.seaAnimals2.push(new SeaAnimal({
+      order: 2,
+      picture: 'salmon.jpg',
+      name: 'Salmon',
+      mammal: true
+    }));
+    this.seaAnimals2.push(new SeaAnimal({
+      order: 3,
+      picture: 'shark.jpg',
+      name: 'Shark',
+      mammal: false
+    }));
+    this.seaAnimals2.push(new SeaAnimal({
+      order: 3,
+      picture: 'shark.jpg',
+      name: 'Shark',
+      mammal: false
+    }));
+    this.seaAnimals2.push(new SeaAnimal({
+      order: 4,
+      picture: 'whale.jpg',
+      name: 'Whale',
+      mammal: true
     }));
   }
   
   ngOnInit() {
    console.log('onInit');
-   /*
-    this.route.params.subscribe((params: Params) => {
-      console.log('subscribe(): params = ' + params);
-      let str = params['ver'];
-      console.log('ver = ' + str);
-    });
-    */
   }
 }

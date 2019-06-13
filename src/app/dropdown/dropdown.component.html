@@ -1,0 +1,3 @@
+<select (change)="onSelect($event.target.value)">
+  <option *ngFor="let version of versions" [value]="version">{{version}}</option>
+</select>

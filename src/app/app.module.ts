@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 const routes: Routes = [
   { path: 'ver/:ver', component: AppComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DropdownComponent
   ],
   imports: [
     BrowserModule,

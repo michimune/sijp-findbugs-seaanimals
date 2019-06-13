@@ -1,15 +1,17 @@
 <header>
   <h2>{{ title }}</h2>
 </header>
-<b>Please file a bug from</b>
-<a href="http://bit.ly/breport2">
+<b>Please file a bug from:</b>
+<a href="http://bit.ly/breport2" title="Bug Report">
   <img src="./assets/bug.jpg" height="42" width="42">
 </a>
 <br />
 <div>
-  Current version: {{version}}<br/>
+  Version: <app-dropdown [currentVersion] = "currentVersion"></app-dropdown>
 </div>
-<section class="main" *ngIf="seaAnimals.length > 0">
+<div><br /></div>
+<div><br /></div>
+<section class="main" *ngIf="currentVersion == 1 && seaAnimals1.length > 0">
   <table>
     <tr>
       <th>Order</th>
@@ -17,11 +19,27 @@
       <th>Picture</th>
       <th>Mammal?</th>
     </tr>
-    <tr *ngFor="let animal of seaAnimals">
+    <tr *ngFor="let animal of seaAnimals1">
       <td class="center">{{animal.order}}</td>
       <td>{{animal.name}}</td>
       <td><img src="./assets/{{animal.picture}}" style="width: 256px;"/></td>
-      <td>{{animal.mammal ? 'Y' : 'N'}}</td>
+      <td>{{animal.mammal ? 'Yes' : 'No'}}</td>
+    </tr>
+  </table>
+</section>
+<section class="main" *ngIf="currentVersion == 2 && seaAnimals2.length > 0">
+  <table>
+    <tr>
+      <th>Order</th>
+      <th>Name</th>
+      <th>Picture</th>
+      <th>Mammal?</th>
+    </tr>
+    <tr *ngFor="let animal of seaAnimals2">
+      <td class="center">{{animal.order}}</td>
+      <td>{{animal.name}}</td>
+      <td><img src="./assets/{{animal.picture}}" style="width: 256px;"/></td>
+      <td>{{animal.mammal ? 'Yes' : 'No'}}</td>
     </tr>
   </table>
 </section>
