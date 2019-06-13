@@ -26,3 +26,30 @@ input[type="checkbox"] {
     transform: scale(2, 2);
     vertical-align: middle;
 }
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 42px;
+}
+
+.bugimage {
+    display: block;
+    width: 42px;
+    height: 42px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+}
+
+.container:hover .overlay {
+    opacity: 1;
+}

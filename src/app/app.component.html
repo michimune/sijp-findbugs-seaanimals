@@ -2,9 +2,15 @@
   <h2>{{ title }}</h2>
 </header>
 <b>Please file a bug from:</b>
-<a href="http://bit.ly/breport2" title="Bug Report">
-  <img src="./assets/bug.jpg" height="42" width="42">
-</a>
+<div class="container">
+  <a href="http://bit.ly/breport2" title="Bug Report">
+  <img src="./assets/bug.jpg" class="bugimage">
+  <div class="overlay">
+    <img src="./assets/bug-red.jpg" class="bugimage">
+  </div>
+  </a>
+</div>
+<br />
 <br />
 <div>
   Version: <app-dropdown [currentVersion] = "currentVersion" (change)="versionChanged($event)"></app-dropdown>
