@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, ActivationEnd, ActivatedRoute, Params, ParamMap } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit, Input } from '@angular/core';
 import { SeaAnimal } from './sea-animal';
 
 @Component({
@@ -12,10 +9,9 @@ import { SeaAnimal } from './sea-animal';
 export class AppComponent implements OnInit {
   title = 'Sea animals in the order of the size';
   versions: number[] = [1, 2];
-  currentVersion: number = this.versions[0];
+  @Input() currentVersion: number = this.versions[0];
   seaAnimals1: SeaAnimal[] = [];
   seaAnimals2: SeaAnimal[] = [];
-  sub: Subscription;
 
   constructor() {
     this.seaAnimals1.push(new SeaAnimal({
@@ -77,5 +73,10 @@ export class AppComponent implements OnInit {
   
   ngOnInit() {
    console.log('onInit');
+  }
+
+  versionChanged(event) {
+    console.log('versionChanged: ' + event.target.value);
+    this.currentVersion = event.target.value;
   }
 }

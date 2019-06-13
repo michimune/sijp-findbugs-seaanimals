@@ -1,15 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
 import { DropdownComponent } from './dropdown/dropdown.component';
-
-const routes: Routes = [
-  { path: 'ver/:ver', component: AppComponent },
-  { path: '', redirectTo: '/ver/1.0', pathMatch: 'full' }
-];
 
 @NgModule({
   declarations: [
@@ -17,11 +10,9 @@ const routes: Routes = [
     DropdownComponent
   ],
   imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    BrowserModule
   ],
   exports: [
-    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
