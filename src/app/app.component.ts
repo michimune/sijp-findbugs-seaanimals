@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
     this.seaAnimals2.push(new SeaAnimal({
       order: 4,
       picture: 'whale.jpg',
-      name: 'Whale',
+      name: 'Whole',
       mammal: true
     }));
   }

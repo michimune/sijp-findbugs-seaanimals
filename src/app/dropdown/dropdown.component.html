@@ -1,3 +1,5 @@
-<select (change)="onSelect($event.target.value)" class="version-box">
-  <option *ngFor="let version of versions" [value]="version">{{version}}</option>
-</select>
+<span *ngIf="versions">
+  <select (change)="onSelect($event.target.value)" class="version-box">
+    <option *ngFor="let version of versions" [value]="version">{{version}}</option>
+  </select>
+</span>

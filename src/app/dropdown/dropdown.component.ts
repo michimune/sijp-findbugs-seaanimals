@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./dropdown.component.css']
 })
 export class DropdownComponent {
-  public versions: number[] = [1, 2];
+  @Input() versions: number[];
   currentVersionNumber: number = 0;
 
   @Input() get currentVersion() {

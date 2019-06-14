@@ -13,7 +13,7 @@
 <br />
 <br />
 <div>
-  Version: <app-dropdown [currentVersion] = "currentVersion" (change)="versionChanged($event)"></app-dropdown>
+  Version: <app-dropdown [currentVersion]="currentVersion" [versions]="versions" (change)="versionChanged($event)"></app-dropdown>
 </div>
 <div><br /></div>
 <div><br /></div>
