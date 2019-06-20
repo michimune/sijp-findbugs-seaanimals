@@ -12,11 +12,11 @@
 </div>
 <br />
 <br />
-<div>
+<div style="display: none">
   Version: <app-dropdown [currentVersion]="currentVersion" [versions]="versions" (change)="versionChanged($event)"></app-dropdown>
+  <div><br /></div>
+  <div><br /></div>
 </div>
-<div><br /></div>
-<div><br /></div>
 <section class="main" *ngIf="currentVersion == 1 && seaAnimals1.length > 0">
   <table>
     <tr>
