@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { SeaAnimal } from './sea-animal';
 
 @Component({
@@ -13,7 +14,10 @@ export class AppComponent implements OnInit {
   seaAnimals1: SeaAnimal[] = [];
   seaAnimals2: SeaAnimal[] = [];
 
-  constructor() {
+  constructor(private _route : ActivatedRoute) {
+    console.log('keys = ' + Object.keys(_route.params));
+    console.log('keys = ' + Object.keys(_route.snapshot.queryParams));
+
     this.seaAnimals1.push(new SeaAnimal({
       order: 1,
       picture: 'salmon.jpg',
